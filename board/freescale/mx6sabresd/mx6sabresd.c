@@ -229,9 +229,9 @@ static iomux_v3_cfg_t const bl_pads[] = {
 
 static void enable_backlight(void)
 {
-	imx_iomux_v3_setup_multiple_pads(bl_pads, ARRAY_SIZE(bl_pads));
+	/*imx_iomux_v3_setup_multiple_pads(bl_pads, ARRAY_SIZE(bl_pads));
 	gpio_request(DISP0_PWR_EN, "Display Power Enable");
-	gpio_direction_output(DISP0_PWR_EN, 1);
+	gpio_direction_output(DISP0_PWR_EN, 1);*/
 }
 
 static void enable_rgb(struct display_info_t const *dev)
@@ -370,7 +370,7 @@ int board_mmc_getcd(struct mmc *mmc)
 		//ret = !gpio_get_value(USDHC2_CD_GPIO);
 		break;
 	case USDHC3_BASE_ADDR:
-		ret = !gpio_get_value(USDHC3_CD_GPIO);
+		//ret = !gpio_get_value(USDHC3_CD_GPIO);
 		break;
 	case USDHC4_BASE_ADDR:
 		ret = 1; /* eMMC/uSDHC4 is always present */
